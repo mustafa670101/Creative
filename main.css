@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: kamerik-k;
+	color: #fff;
+	overflow-x: hidden;
+}
+.scene {
+	height: 250vh;
+}
+.layer {
+	height: 100vh;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-timeline: scroll();
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-range: 0 150vh;
+}
+
+.layer:nth-child(1) { animation-name: animation-1; }
+@keyframes animation-1 { to { scale: 1.5; } }
+
+.layer:nth-child(2) { animation-name: animation-2; }
+@keyframes animation-2 { to { scale: 1.275; } }
+
+.layer:nth-child(3) { animation-name: animation-3; }
+@keyframes animation-3 { to { scale: 1.5; } }
+
+.layer:nth-child(4) { animation-name: animation-4; }
+@keyframes animation-4 { to { scale: 2; } }
+
+.layer__content {
+	animation-timeline: scroll();
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-range: 0 45vh;
+	animation-name: animation-head;
+}
+@keyframes animation-head { to { opacity: 0; filter: blur(20px); } }
+
+.layer__content h1 {
+	font-size: 4rem;
+	line-height: 1em;
+	text-align: center;
+}
